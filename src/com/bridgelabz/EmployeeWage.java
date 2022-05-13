@@ -8,16 +8,19 @@ public class EmployeeWage {
     public static void main(String[] args) {
         System.out.println("Welcome to Employee Wage Computation Program!");
         double empCheck = Math.floor(Math.random() * 10) % 3;
-        if (empCheck == 1) {
-            System.out.println("Employee is present");
-            int daily_wage = WAGE_PER_HOUR * FULL_DAY_HOUR;
-            System.out.println("Daily wage is : " + daily_wage);
-        } else if (empCheck == 2) {
-            System.out.println("Employee is present ");
-            int daily_wage = WAGE_PER_HOUR * PART_TIME;
-            System.out.println("Daily wage is : " + daily_wage);
-        } else {
-            System.out.println("Employee is absent ");
+        switch ((int) empCheck) {
+            case 0:
+                System.out.println("Employee is present");
+                int daily_wage = WAGE_PER_HOUR * FULL_DAY_HOUR;
+                System.out.println("Daily wage is : " + daily_wage);
+                break;
+            case 1:
+                System.out.println("Employee is present ");
+                int part_time = WAGE_PER_HOUR * PART_TIME;
+                System.out.println("Daily wage is : " + part_time);
+                break;
+            default:
+                System.out.println("Employee is absent ");
         }
     }
 }
